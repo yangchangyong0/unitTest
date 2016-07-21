@@ -15,13 +15,17 @@ public class TestBiz {
   private TestService testService;
 
   @Transactional
-  public void insetTes() {
+  public void insetTes() throws Exception {
     try {
       for (int j = 0; j < 8; j++) {
         testService.testInsert(j, j + "姓名");
+        if (j == 3) {
+          int i = 1 / 0;// 此处会产生异常
+        }
       }
     } catch (Exception ex) {
       System.out.println("biz层异常日志处理");
+      throw new RuntimeException(ex);
     }
 
     System.out.println("biz层 正常执行");

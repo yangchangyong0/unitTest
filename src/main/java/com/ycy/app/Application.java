@@ -21,9 +21,13 @@ public class Application {
   private TestBiz testBiz;
 
   @RequestMapping("/")
-  String home() throws Exception {
+  String home()  {
     System.out.println("controller 正常执行");
-    testBiz.insetTes();
+    try {
+      testBiz.insetTes();
+    } catch (Exception e) {
+      System.out.println("controller 异常日志执行");
+    }
 
     return " 正常返回Hello World!";
   }
