@@ -30,4 +30,9 @@ public class TestServiceImpl implements com.ycy.service.TestService {
     }
     System.out.println(num + "service正常执行");
   }
+
+  @Override
+  public YcyTable getYcyTable(Integer id) {
+    return ycyTableMapper.selectByPrimaryKey(id);
+  }
 }

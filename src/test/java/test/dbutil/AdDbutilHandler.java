@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by ycy on 16/7/30.
  */
-public class AdDbutilHandler<T> {
+  public class AdDbutilHandler<T> {
   private Logger logger = LoggerFactory.getLogger(this.getClass());
 
   /**
